@@ -1,0 +1,27 @@
+# hello_iot.py
+import sys
+import platform
+import datetime
+
+print("=" * 50)
+print("   IoT 플랫폼 구축 과정 - Week 1")
+print("=" * 50)
+
+# 시스템 정보
+print(f"\n📊 시스템 정보:")
+print(f"  - Python 버전: {sys.version.split()[0]}")
+print(f"  - 운영체제: {platform.system()} {platform.release()}")
+print(f"  - 프로세서: {platform.processor()}")
+print(f"  - 현재 시간: {datetime.datetime.now()}")
+
+# 패키지 확인
+print(f"\n📦 설치된 주요 패키지:")
+packages = ['numpy', 'pandas', 'matplotlib']
+for pkg in packages:
+    try:
+        __import__(pkg)
+        print(f"  ✅ {pkg} 설치됨")
+    except ImportError:
+        print(f"  ❌ {pkg} 미설치")
+
+print("\n🎉 환경 설정 완료! IoT 개발을 시작할 준비가 되었습니다!")
